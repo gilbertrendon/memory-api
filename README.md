@@ -10,7 +10,11 @@ Cuando se ejecuta el programa sale un mensaje que dice: "Segmentation fault".
 
 2. Compile el programa del ejercicio anterior usando información de simbolos (con la flag -g). Al hacer esto se esta poniendo mas informacion en el ejecutable para permitir al debugger acceder a informacion util sobre los nombres de las variables y cosas similares. Ejecute el programa bajo el debugger digitando en consola (para el caso) ```gdb null``` y entonces una vez el ```gdb``` este corriendo ejecute ```run```. ¿Qué muestra gdb?
 
-R/ Muestra que hay problemas de segmentación como se puede apreciar en la carpeta de los pantallazos(Figura1), al compilar el programa con la flag -g hubieron inconvenientes con la creación de una tabla como se puede observar en la figura3.1
+R/ Muestra que hay problemas de segmentación como se puede apreciar en la carpeta de los pantallazos:
+
+![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura1.png)
+
+Al compilar el programa con la flag -g hubieron inconvenientes con la creación de una tabla como se puede observar en la figura3.1
 
 3. Haga uso de la herramienta ```valgrind``` en el programa empleado en los puntos anteriores. Se usará la herramienta ```memcheck``` que es parte de ```valgrind``` para analizar lo que pasa: ``` valgrind --leak-check=yes null```. ¿Qué pasa cuando corre esto?, Â¿Puede usted interpretar la salida de la herramienta anterior?
 
