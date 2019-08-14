@@ -14,13 +14,22 @@ R/ Muestra que hay problemas de segmentación como se puede apreciar en la carpe
 
 ![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura1.png)
 
-Al compilar el programa con la flag -g hubieron inconvenientes con la creación de una tabla como se puede observar en la figura3.1
+Al compilar el programa con la flag -g hubieron inconvenientes con la creación de una tabla como se puede observar en la siguiente imagen:
+![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura3.1.png)
 
 3. Haga uso de la herramienta ```valgrind``` en el programa empleado en los puntos anteriores. Se usará la herramienta ```memcheck``` que es parte de ```valgrind``` para analizar lo que pasa: ``` valgrind --leak-check=yes null```. ¿Qué pasa cuando corre esto?, Â¿Puede usted interpretar la salida de la herramienta anterior?
 
-R/ Al usar este comando se aprecia más detalladamente en que consiste el error que apreciamos en los puntos anteriores, mostrándo un error relacionado con el mapeo y otros detalles respecto al problema de segmentación como se puede apreciar en la figura: 3.2
+R/ Al usar este comando se aprecia más detalladamente en que consiste el error que apreciamos en los puntos anteriores, mostrándo un error relacionado con el mapeo, problemas de que no hay el espacio requerido para hacer dicha operación que se solicita y otros detalles respecto al problema de segmentación como se puede apreciar en la siguiente figura:
+
+![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura4.1.png)
 
 4. Escriba un programa sencillo que asigne memoria usando ```malloc()``` pero olvide liberarla antes de que el programa termina. ¿Qué pasa cuando este programa se ejecuta?, ¿Puede usted usar gdb para encontrar problemas como este?, ¿Que dice acerca de Valgrind (de nuevo use este con la bandera ```--leak check=yes```)?
+Teniendo en cuenta que el problema descrito en este punto se asoció con una de las anomalías más comunes cuando se gestiona la memoria de forma explícita es lo que se conoce como “fuga de memoria”. Esta situación ocurre cuando un programa obtiene memoria dinámica, 
+y el valor del puntero que devuelve el sistema, por error, se pierde. En tal caso, ya no es posible invocar a la función free con ese puntero, y la porción de memoria se queda reservada por lo que resta de ejecución. Como ejemplo de fuga de memoria analicemos el siguiente fragmento de código.
+
+Si se pudo usar gdb, pero debido a que el programa ejecutado no era muy complejo no se pudieron apreciar grandes diferencias en cuanto a la memoria usada u otros factores.
+Al usar valgrind XXXXXXXXXXXXXXXX
+
 
 5. Escriba un programa que cree un array de enteros llamado data de un tamaño de 100 usando ```malloc```; entonces, lleve el ```data[100]``` a ```0```. ¿Qué pasa cuando este programa se ejecuta?, ¿Qué pasa cuando se corre el programa usando ```valgrind```?, ¿El programa es correcto?
 
