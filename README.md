@@ -33,7 +33,15 @@ Al usar valgrind XXXXXXXXXXXXXXXX
 
 5. Escriba un programa que cree un array de enteros llamado data de un tamaño de 100 usando ```malloc```; entonces, lleve el ```data[100]``` a ```0```. ¿Qué pasa cuando este programa se ejecuta?, ¿Qué pasa cuando se corre el programa usando ```valgrind```?, ¿El programa es correcto?
 
+Hay un error de escritura, debido a que normalmente se toman las posiciones desde la cero hasta la n-1 donde n es el tamaño del vector:
+
+![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura5.png)
+
+Como se puede ver en la imagen también hay un error porque solo se permite la ejecución del código para un tipo de arquitectura.
+
 6. Codifique un programa que asigne un array de enteros (como arriba), luego lo libere, y entonces intente imprimir el valor de un elemento del array. ¿El programa corre?, ¿Que pasa cuando hace uso de ```valgrind```?
+
+![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura6.png)
 
 7. Ahora pase un **funny value** para liberar (e.g. un puntero en la mitad del array que usted ha asignado) ¿Qué pasa?, ¿Ústed necesita herramientas para encontrar este tipo de problemas?
 
