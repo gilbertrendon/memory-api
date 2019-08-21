@@ -44,6 +44,8 @@ Como se puede ver en la imagen también hay un error porque solo se permite la e
 
 ![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura6.png)
 
+Hay tanto lectura como escritura inválidas.
+
 7. Ahora pase un **funny value** para liberar (e.g. un puntero en la mitad del array que usted ha asignado) ¿Qué pasa?, ¿Ústed necesita herramientas para encontrar este tipo de problemas?
 
 Como se puede ver en la siguiente imagen:
