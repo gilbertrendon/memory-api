@@ -48,7 +48,7 @@ Como se puede ver en la imagen también hay un error porque solo se permite la e
 
 Como se puede ver en la siguiente imagen:
 
-![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura7.1.png)
+![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura7.2.png)
 
 Hay problemas, y estos problemas más detalladamente consisten en que hay problemas de inicialización de un valor, problemas relacionados con el espacio en la memoria.
 
