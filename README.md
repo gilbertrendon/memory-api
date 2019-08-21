@@ -24,11 +24,12 @@ R/ Al usar este comando se aprecia más detalladamente en que consiste el error 
 ![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura4.1.png)
 
 4. Escriba un programa sencillo que asigne memoria usando ```malloc()``` pero olvide liberarla antes de que el programa termina. ¿Qué pasa cuando este programa se ejecuta?, ¿Puede usted usar gdb para encontrar problemas como este?, ¿Que dice acerca de Valgrind (de nuevo use este con la bandera ```--leak check=yes```)?
+
 Teniendo en cuenta que el problema descrito en este punto se asoció con una de las anomalías más comunes cuando se gestiona la memoria de forma explícita es lo que se conoce como “fuga de memoria”. Esta situación ocurre cuando un programa obtiene memoria dinámica, 
 y el valor del puntero que devuelve el sistema, por error, se pierde. En tal caso, ya no es posible invocar a la función free con ese puntero, y la porción de memoria se queda reservada por lo que resta de ejecución. Como ejemplo de fuga de memoria analicemos el siguiente fragmento de código.
 
 Si se pudo usar gdb, pero debido a que el programa ejecutado no era muy complejo no se pudieron apreciar grandes diferencias en cuanto a la memoria usada u otros factores.
-Al usar valgrind XXXXXXXXXXXXXXXX
+Al usar valgrind se muestra lo relacionado con el programa más detalladamente.
 
 
 5. Escriba un programa que cree un array de enteros llamado data de un tamaño de 100 usando ```malloc```; entonces, lleve el ```data[100]``` a ```0```. ¿Qué pasa cuando este programa se ejecuta?, ¿Qué pasa cuando se corre el programa usando ```valgrind```?, ¿El programa es correcto?
@@ -45,10 +46,15 @@ Como se puede ver en la imagen también hay un error porque solo se permite la e
 
 7. Ahora pase un **funny value** para liberar (e.g. un puntero en la mitad del array que usted ha asignado) ¿Qué pasa?, ¿Ústed necesita herramientas para encontrar este tipo de problemas?
 
+Como se puede ver en la siguiente imagen:
+
+![enlace](https://raw.githubusercontent.com/gilbertrendon/memory-api/master/Pantallazos/Figura7.1.png)
+
+Hay problemas, y estos problemas más detalladamente consisten en que hay problemas de inicialización de un valor, problemas relacionados con el espacio en la memoria.
+
 8. Intente usar alguna de las otras interfaces para asignacion de memoria. Por ejemplo, cree una estructura de datos simple similar a un vector y que use rutinas que usen realloc para manejar el vector. Use un array para almacenar los elementos del vector; cuando un usuario agregue una entrada al vector, use realloc para asignar un espacio mas a este. ¿Que tan bien funciona el vector asi?, ¿Como se compara con una lista enlazada?, utilice ```valgrind``` para ayudarse en la busqueda de errores.
 
 9. Gaste mas tiempo y lea sobre el uso de gdb y valgrind. Conocer estas herramientas es critico; gaste el tiempo y aprenda como volverse un experto debugger en UNIX y C enviroment.
-
 
 ### Valgrind ###
 
